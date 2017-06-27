@@ -1,11 +1,11 @@
 class Api::V1::MerchantsController < ApplicationController
 
   def index
-    @merchants = Merchant.all
+    render json: Merchant.all
   end
 
   def show
-    @merchant = Merchant.find(params[:id])
+    render json: Merchant.find(params[:id])
   end
 
 end

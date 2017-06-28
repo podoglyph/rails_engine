@@ -19,7 +19,7 @@ describe "Invoices API" do
   end
 
   context "GET /api/v1/show" do
-    xit "sends an individual item" do
+    it "sends an individual item" do
       id = create(:item).id
       get "/api/v1/items/#{id}"
 

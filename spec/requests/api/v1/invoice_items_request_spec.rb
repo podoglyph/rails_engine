@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "invoice_items API" do
+describe "InvoiceItems API" do
 
   context "GET /api/v1/index" do
     it "sends a list of invoice items" do
@@ -21,7 +21,7 @@ describe "invoice_items API" do
   end
 
   context "GET /api/v1/show" do
-    xit "sends an individual invoice_item" do
+    it "sends an individual invoice_item" do
       id = create(:invoice_item).id
       get "/api/v1/invoice_items/#{id}"
 

@@ -52,8 +52,6 @@ describe "Merchants API" do
       expect(raw_merchant1).to have_key("id")
       expect(raw_merchant1["id"]).to eq(merchant1.id)
       expect(raw_merchant1["name"]).to eq(merchant1.name)
-      expect(raw_merchant1).to have_key("created_at")
-      expect(raw_merchant1).to have_key("updated_at")
     end
   end
 
@@ -74,8 +72,6 @@ describe "Merchants API" do
       expect(raw_merchant).to have_key("id")
       expect(raw_merchant["id"]).to eq(merchant1.id)
       expect(raw_merchant["name"]).to eq(merchant1.name)
-      expect(raw_merchant).to have_key("created_at")
-      expect(raw_merchant).to have_key("updated_at")
     end
 
   end
@@ -126,7 +122,7 @@ describe "Merchants API" do
 
       raw_merchant = JSON.parse(response.body)
 
-      expect(raw_merchant).to have_key("created_at")
+      expect(raw_merchant).to have_key("id")
       expect(raw_merchant["id"]).to eq(merchant.id)
     end
 
@@ -161,7 +157,7 @@ describe "Merchants API" do
 
       raw_merchant = JSON.parse(response.body)
 
-      expect(raw_merchant).to have_key("updated_at")
+      expect(raw_merchant).to have_key("id")
       expect(raw_merchant["id"]).to eq(merchant.id)
     end
 

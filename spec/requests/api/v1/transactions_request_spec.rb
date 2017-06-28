@@ -126,7 +126,7 @@ describe "Transactions API" do
 
       raw_transaction = JSON.parse(response.body)
 
-      expect(raw_transaction).to have_key("created_at")
+      expect(raw_transaction).to have_key("id")
       expect(raw_transaction["id"]).to eq(transaction.id)
     end
 
@@ -161,7 +161,7 @@ describe "Transactions API" do
 
       raw_transaction = JSON.parse(response.body)
 
-      expect(raw_transaction).to have_key("updated_at")
+      expect(raw_transaction).to have_key("id")
       expect(raw_transaction["id"]).to eq(transaction.id)
     end
 

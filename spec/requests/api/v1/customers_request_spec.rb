@@ -119,7 +119,7 @@ describe "Customers API" do
 
       raw_customer = JSON.parse(response.body)
 
-      expect(raw_customer).to have_key("created_at")
+      expect(raw_customer).to have_key("id")
       expect(raw_customer["id"]).to eq(customer.id)
     end
 
@@ -154,7 +154,7 @@ describe "Customers API" do
 
       raw_customer = JSON.parse(response.body)
 
-      expect(raw_customer).to have_key("updated_at")
+      expect(raw_customer).to have_key("id")
       expect(raw_customer["id"]).to eq(customer.id)
     end
 

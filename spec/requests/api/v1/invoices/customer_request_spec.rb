@@ -11,8 +11,7 @@ describe "GET /api/v1/invoices/:id/customer" do
     expect(response).to be_success
 
     raw_customer = JSON.parse(response.body)
-
-    expect(raw_customer["id"]).to eq(merch_id)
+    expect(raw_customer["id"]).to eq(cust_id)
     expect(raw_customer).to have_key("first_name")
     expect(raw_customer).to have_key("last_name")
   end

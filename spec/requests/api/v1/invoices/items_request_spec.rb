@@ -4,9 +4,9 @@ describe "GET /api/v1/invoices/:id/items" do
   it "returns a collection of items for invoice" do
     id = create(:invoice).id
 
-    item_1 = create(:item, invoice_id: id)
-    item_2 = create(:item, invoice_id: id)
-    item_3 = create(:item, invoice_id: id)
+    item_1 = create(:item)
+    item_2 = create(:item)
+    item_3 = create(:item)
 
     invoice_item_1 = create(:invoice_item, invoice_id: id, item_id: item_1.id)
     invoice_item_2 = create(:invoice_item, invoice_id: id, item_id: item_2.id)

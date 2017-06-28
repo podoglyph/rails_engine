@@ -6,4 +6,10 @@ class Invoice < ApplicationRecord
   has_many :transactions
   belongs_to :customer
   belongs_to :merchant
+
+  # def self.successful_invoices
+  #   self.select("invoices.*, sum(invoice_items.quantity * invoice_items.unit_price) AS total_revenue")
+  #   .joins(:invoice_items, :transactions).where(transactions: {result: "success"})
+  #   .group("invoices.id").order("total_revenue DESC")
+  # end
 end

@@ -3,4 +3,9 @@ class InvoiceItem < ApplicationRecord
 
   belongs_to :item
   belongs_to :invoice
+
+  def self.successful
+    self.joins(:invoice_items, :transactions).where(transactions: {result: "success"})
+  end
+
 end

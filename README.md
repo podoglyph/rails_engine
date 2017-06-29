@@ -17,41 +17,41 @@ To try the project yourself:
   * Start your rails server and navigate to localhost:3000
 
 
-  Exposing the Data
+Exposing the Data
 
-    * Relationship Endpoints
+  * Relationship Endpoints
 
-      * Merchants
+    * Merchants
 
-      GET /api/v1/merchants/:id/items returns a collection of items associated with that merchant
-      GET /api/v1/merchants/:id/invoices returns a collection of invoices associated with that merchant from their known orders
+    GET /api/v1/merchants/:id/items returns a collection of items associated with that merchant
+    GET /api/v1/merchants/:id/invoices returns a collection of invoices associated with that merchant
 
-      * Invoices
+    * Invoices
 
-        GET /api/v1/invoices/:id/transactions returns a collection of associated transactions
-        GET /api/v1/invoices/:id/invoice_items returns a collection of associated invoice items
-        GET /api/v1/invoices/:id/items returns a collection of associated items
-        GET /api/v1/invoices/:id/customer returns the associated customer
-        GET /api/v1/invoices/:id/merchant returns the associated merchant
+      GET /api/v1/invoices/:id/transactions returns a collection of associated transactions
+      GET /api/v1/invoices/:id/invoice_items returns a collection of associated invoice items
+      GET /api/v1/invoices/:id/items returns a collection of associated items
+      GET /api/v1/invoices/:id/customer returns the associated customer
+      GET /api/v1/invoices/:id/merchant returns the associated merchant
 
-      * Invoice Items
+    * Invoice Items
 
-        GET /api/v1/invoice_items/:id/invoice returns the associated invoice
-        GET /api/v1/invoice_items/:id/item returns the associated item
+      GET /api/v1/invoice_items/:id/invoice returns the associated invoice
+      GET /api/v1/invoice_items/:id/item returns the associated item
 
-      * Items
+    * Items
 
-        GET /api/v1/items/:id/invoice_items returns a collection of associated invoice items
-        GET /api/v1/items/:id/merchant returns the associated merchant
+      GET /api/v1/items/:id/invoice_items returns a collection of associated invoice items
+      GET /api/v1/items/:id/merchant returns the associated merchant
 
-      * Transactions
+    * Transactions
 
-        GET /api/v1/transactions/:id/invoice returns the associated invoice
+      GET /api/v1/transactions/:id/invoice returns the associated invoice
 
-      * Customers
+    * Customers
 
-        GET /api/v1/customers/:id/invoices returns a collection of associated invoices
-        GET /api/v1/customers/:id/transactions returns a collection of associated transactions
+      GET /api/v1/customers/:id/invoices returns a collection of associated invoices
+      GET /api/v1/customers/:id/transactions returns a collection of associated transactions
 
   Business Intelligence Endpoints
 

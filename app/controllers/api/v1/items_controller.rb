@@ -5,9 +5,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def show
-    item = Item.find(params[:id])
-    # item.unit_price.to_s.insert(-3, '.')
-    render json: item
+    render json: Item.find(params[:id])
   end
 
 end

@@ -6,4 +6,9 @@ class Invoice < ApplicationRecord
   has_many :transactions
   belongs_to :customer
   belongs_to :merchant
+
+  def self.successful
+    joins(:transactions).merge(Transaction.successful)
+  end
+
 end

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
         get '/:id/items', to: 'items#index'
         get '/:id/invoices', to: 'invoices#index'
         get '/:id/revenue', to: 'single_revenue#show'
-        #get '/revenue', to: 'revenue#index'
+        get '/revenue', to: 'revenue#show'
         get '/most_revenue', to: 'most_revenue#index'
         get '/:id/favorite_customer', to: 'favorite_customer#show'
         get '/:id/customers_with_pending_invoices', to: 'customers_with_pending_invoices#index'

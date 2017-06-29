@@ -29,19 +29,25 @@ To try the project yourself:
 **Invoices**
 
 `GET /api/v1/invoices/:id/transactions` returns a collection of associated transactions
+
 `GET /api/v1/invoices/:id/invoice_items` returns a collection of associated invoice items
+
 `GET /api/v1/invoices/:id/items` returns a collection of associated items
+
 `GET /api/v1/invoices/:id/customer` returns the associated customer
+
 `GET /api/v1/invoices/:id/merchant` returns the associated merchant
 
 **Invoice Items**
 
 `GET /api/v1/invoice_items/:id/invoice` returns the associated invoice
+
 `GET /api/v1/invoice_items/:id/item` returns the associated item
 
 **Items**
 
 `GET /api/v1/items/:id/invoice_items` returns a collection of associated invoice items
+
 `GET /api/v1/items/:id/merchant` returns the associated merchant
 
 **Transactions**
@@ -51,6 +57,7 @@ To try the project yourself:
 **Customers**
 
 `GET /api/v1/customers/:id/invoices` returns a collection of associated invoices
+
 `GET /api/v1/customers/:id/transactions` returns a collection of associated transactions
 
 **Business Intelligence Endpoints**
@@ -58,14 +65,18 @@ To try the project yourself:
 **All Merchants**
 
 `GET /api/v1/merchants/most_revenue?quantity=x` returns the top x merchants ranked by total revenue
+
 `GET /api/v1/merchants/most_items?quantity=x` returns the top x merchants ranked by total number of items sold
+
 `GET /api/v1/merchants/revenue?date=x` returns the total revenue for date x across all merchants
 Assume the dates provided match the format of a standard ActiveRecord timestamp.
 
 **Single Merchant**
 
 `GET /api/v1/merchants/:id/revenue returns` the total revenue for that merchant across all transactions
+
 `GET /api/v1/merchants/:id/revenue?date=x` returns the total revenue for that merchant for a specific invoice date x
+
 `GET /api/v1/merchants/:id/favorite_customer` returns the customer who has conducted the most total number of successful transactions.
 
 **BOSS MODE**
@@ -74,7 +85,9 @@ Assume the dates provided match the format of a standard ActiveRecord timestamp.
 **Items**
 
 `GET /api/v1/items/most_revenue?quantity=x` returns the top x items ranked by total revenue generated
+
 `GET /api/v1/items/most_items?quantity=x` returns the top x item instances ranked by total number sold
+
 `GET /api/v1/items/:id/best_day` returns the date with the most sales for the given item using the invoice date. If there are multiple days with equal number of sales, return the most recent day.
 
 **Customers**

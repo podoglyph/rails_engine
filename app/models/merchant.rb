@@ -17,4 +17,13 @@ class Merchant < ApplicationRecord
     .order("total_revenue DESC").sum(&:total_revenue)
   end
 
+  def favorite_customer
+    customers
+    .select("customers.*, transactions.count AS trans_count")
+    .joins(:transactions)
+    .merge(Transaction.successful)
+    .group(:id)
+    .order("trans_count DESC")
+    .first
+  end
 end

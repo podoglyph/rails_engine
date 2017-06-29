@@ -20,7 +20,8 @@ Rails.application.routes.draw do
         get '/find_all', to: "find#index"
         get '/find', to: "find#show"
         get '/:id/invoices', to: 'invoices#index'
-        get ':id/transactions', to: 'transactions#index'
+        get '/:id/transactions', to: 'transactions#index'
+        get '/:id/favorite_merchant', to: 'favorite_merchant#show'
       end
 
       namespace :transactions do
@@ -30,28 +31,28 @@ Rails.application.routes.draw do
       end
 
       namespace :items do
-        get 'find', to: "find#show"
-        get 'find_all', to: "find#index"
-        get ':id/invoice_items', to: "invoice_items#index"
-        get ':id/merchant', to: "merchant#show"
-        get 'most_revenue', to: "most_revenue#index"
+        get '/find', to: "find#show"
+        get '/find_all', to: "find#index"
+        get '/:id/invoice_items', to: "invoice_items#index"
+        get '/:id/merchant', to: "merchant#show"
+        get '/most_revenue', to: "most_revenue#index"
       end
 
       namespace :invoices do
-        get 'find', to: "find#show"
-        get 'find_all', to: "find#index"
-        get ':id/transactions', to: "transactions#index"
-        get ':id/invoice_items', to: "invoice_items#index"
-        get ':id/items', to: "items#index"
-        get ':id/customer', to: "customer#show"
-        get ':id/merchant', to: "merchant#show"
+        get '/find', to: "find#show"
+        get '/find_all', to: "find#index"
+        get '/:id/transactions', to: "transactions#index"
+        get '/:id/invoice_items', to: "invoice_items#index"
+        get '/:id/items', to: "items#index"
+        get '/:id/customer', to: "customer#show"
+        get '/:id/merchant', to: "merchant#show"
       end
 
       namespace :invoice_items do
-        get 'find', to: "find#show"
-        get 'find_all', to: "find#index"
-        get ':id/item', to: "item#show"
-        get ':id/invoice', to: "invoice#show"
+        get '/find', to: "find#show"
+        get '/find_all', to: "find#index"
+        get '/:id/item', to: "item#show"
+        get '/:id/invoice', to: "invoice#show"
       end
 
       resources :merchants, only: [:index, :show]

@@ -7,7 +7,6 @@ class Merchant < ApplicationRecord
   has_many :invoice_items, through: :invoices
   has_many :transactions, through: :invoices
 
-
   def revenue(date)
     if date == nil
       invoices
@@ -27,4 +26,13 @@ class Merchant < ApplicationRecord
     end
   end
 
+  def favorite_customer
+    customers
+    .select("customers.*, transactions.count AS trans_count")
+    .joins(:transactions)
+    .merge(Transaction.successful)
+    .group(:id)
+    .order("trans_count DESC")
+    .first
+  end
 end

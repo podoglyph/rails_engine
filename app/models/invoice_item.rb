@@ -3,9 +3,10 @@ class InvoiceItem < ApplicationRecord
 
   belongs_to :item
   belongs_to :invoice
+  has_many :transactions, through: :invoice
 
   def self.successful
-    self.joins(:invoice_items, :transactions).where(transactions: {result: "success"})
+    joins(:transactions).merge(Transaction.successful)
   end
 
 end

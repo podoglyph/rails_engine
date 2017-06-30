@@ -5,5 +5,9 @@ class Transaction < ApplicationRecord
 
   def self.successful
     where(result: "success")
-  end 
+  end
+
+  def failed
+    self.result == "failed"
+  end
 end

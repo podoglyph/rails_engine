@@ -11,4 +11,10 @@ class Invoice < ApplicationRecord
     joins(:transactions).merge(Transaction.successful)
   end
 
+  def pending
+    if transactions.all? { |trans| trans.failed} == true
+      [] << customer
+    end
+  end
+
 end

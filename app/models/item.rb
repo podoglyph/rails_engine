@@ -14,13 +14,14 @@ class Item < ApplicationRecord
   end
 
   def best_day
-    { "best_day" => invoices
-      .joins(:invoice_items)
-      .group(:id)
-      .group(:created_at)
-      .order("sum(invoice_items.quantity) DESC")
-      .first
-      .created_at }
+    invoices
+    .select('invoices.created_at')
+    .joins(:invoice_items)
+    .group(:id, :created_at)
+    .order("sum(invoice_items.quantity) DESC, invoices.created_at ASC")
+    .limit(1)
+    .first
+    .created_at
   end
 
   def self.most_items(quantity)

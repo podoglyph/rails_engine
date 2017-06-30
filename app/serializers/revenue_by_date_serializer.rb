@@ -4,6 +4,5 @@ class RevenueByDateSerializer < ActiveModel::Serializer
   def total_revenue
     object.to_s.insert(-3, '.')
   end
-
-
+  
 end

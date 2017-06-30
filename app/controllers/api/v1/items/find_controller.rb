@@ -7,10 +7,7 @@ class Api::V1::Items::FindController < ApplicationController
   end
 
   def show
-    if item_params[:created_at]
-      item = Item.where(item_params).first
-      render json: item
-    elsif item_params[:updated_at]
+    if item_params[:created_at] || item_params[:updated_at]
       item = Item.where(item_params).first
       render json: item
     else

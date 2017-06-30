@@ -7,12 +7,12 @@ class Customer < ApplicationRecord
 
   def favorite_merchant
     merchants
-    .select("merchants.*, transactions.count AS trans_count")
-    .joins(:transactions)
-    .merge(Transaction.successful)
-    .group(:id)
-    .order("trans_count DESC")
-    .first
+      .select("merchants.*, transactions.count AS trans_count")
+      .joins(:transactions)
+      .merge(Transaction.successful)
+      .group(:id)
+      .order("trans_count DESC")
+      .first
   end
 
 

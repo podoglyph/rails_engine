@@ -6,9 +6,11 @@ Project Setup
 
 To try the project yourself:
 
-  * Create a directory on your machine for this project
+  * Create a directory on your machine for this project and `cd` into it
 
-  * `cd rales_engine` and clone this repo
+  * Clone this repo
+  
+  * `cd rails_engine`
 
   * Run `bundle`
 

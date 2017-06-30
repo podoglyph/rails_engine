@@ -1,10 +1,10 @@
 class Merchant < ApplicationRecord
   validates :name, presence: true
 
-  has_many :invoices
-  has_many :customers, through: :invoices
   has_many :items
+  has_many :invoices
   has_many :invoice_items, through: :invoices
+  has_many :customers, through: :invoices
   has_many :transactions, through: :invoices
 
   def revenue(date)
@@ -52,4 +52,11 @@ class Merchant < ApplicationRecord
     .limit(quantity)
   end
 
+  def self.most_revenue(quantity)
+    joins(:invoice_items)
+    .merge(InvoiceItem.successful)
+    .group(:id)
+    .order("sum(invoice_items.quantity * invoice_items.unit_price) DESC")
+    .limit(quantity)
+  end
 end

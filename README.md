@@ -21,8 +21,8 @@ To try the project yourself:
 **Running Spec Harness**
 
  * navigate to `/rales_engine_spec_harness` in a seperate terminal tab
- * run `rails s` on the `/rails_engine` forler in the first terminal tab
- * run `rake` on the spec harness folder in new terminal tab
+ * run `rails s` on the `/rails_engine` folder in the first terminal tab
+ * run `rake` on the `/rales_engine_spec_harness` folder in new terminal tab
 
 **Exposing the Data**
 
